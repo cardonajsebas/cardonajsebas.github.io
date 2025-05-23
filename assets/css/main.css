@@ -162,7 +162,7 @@ input, select, textarea {
 	b{
 		font-weight: 400;
 		font-size: 30px;
-		color: #666;
+		color: #60cdff;
 	}
 
 	em, i {
@@ -761,7 +761,7 @@ input, select, textarea {
 				}
 
 				#main > section.dark strong {
-					color: #fff;
+					color: #ffffff;
 					border-color: inherit;
 				}
 
@@ -782,7 +782,7 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/background5.jpg");
+				background-image: url("../../images/banner3.jpg");
 			}
 
 			#main > section.two {
