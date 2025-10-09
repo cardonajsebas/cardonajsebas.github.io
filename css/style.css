@@ -1,0 +1,511 @@
+/* css/style.css */
+
+/* -------------------------------------- */
+/* 0. UTILITY CLASSES & GLOBAL LAYOUT     */
+/* -------------------------------------- */
+
+.container {
+    /* Constrains content width for readability and centers it */
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section-padding {
+    padding: 60px 0; /* Vertical padding for all main sections */
+}
+
+.background-secondary {
+    background-color: var(--color-secondary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+strong {
+    font-weight: normal;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* -------------------------------------- */
+/* 1. TYPOGRAPHY & HEADINGS               */
+/* -------------------------------------- */
+
+h1 { font-size: 2.5rem; margin-bottom: 0.25em; }
+h2 { font-size: 2rem; margin-bottom: 0.75em; }
+h3 { font-size: 1.5rem; margin-bottom: 0.5em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+h1{ 
+    font-family: var(--font-family-secondary);
+}
+
+
+/* -------------------------------------- */
+/* 2. NAVIGATION (HEADER)                 */
+/* -------------------------------------- */
+
+#main-header {
+    background-color: var(--color-secondary);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+#main-nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+#main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+#main-nav ul li a {
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+#main-nav ul li a:hover,
+#main-nav ul li a.active {
+    color: var(--color-white);
+}
+
+
+/* -------------------------------------- */
+/* 3. CTA BUTTONS (Reusable)              */
+/* -------------------------------------- */
+
+/* COMBINED STYLES: Applies to both primary and secondary CTAs (DRY Principle) */
+.cta-primary, .cta-secondary {
+    display: inline-block;
+    background-color: var(--color-light-bg); /* Use the lighter accent */
+    color: var(--color-primary); /* Dark text on light button */
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* COMBINED HOVER STYLES */
+.cta-primary:hover, .cta-secondary:hover {
+    background-color: var(--color-accent-soft);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+
+/* -------------------------------------- */
+/* 4. HERO SECTION (With Profile Image)   */
+/* -------------------------------------- */
+
+#home {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+#home .hero-content {
+    padding-inline: clamp(16px, 4vw, 40px);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+}
+
+.hero-text {
+    width: 100%; 
+    order: 1;
+    text-align: center;
+}
+
+.hero-image {
+    width: 70%; 
+    max-width: 350px;
+    margin-top: 30px; 
+    margin-bottom: 0;
+    order: 2; /* Image appears second on mobile */
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    border: 5px solid var(--color-accent-soft); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; 
+}
+
+#home h1 {
+    color: var(--color-white);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 700; 
+}
+
+#home h2 {
+    color: var(--color-accent-soft);
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.value-proposition {
+    max-width: 800px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* -------------------------------------- */
+/* 5. ABOUT SECTION                       */
+/* -------------------------------------- */
+
+/* Container for text and proficiency tags - Mobile first, stacks vertically */
+.about-content {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+/* Ensure resume button is visible on mobile before tags, and add space below H2 */
+#about .container h2 {
+    margin-bottom: 25px;
+}
+
+.about-text .cta-primary {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the Key Proficiencies tags */
+.key-proficiencies h3 {
+    margin-top: 0; 
+    border-bottom: none; 
+    padding-bottom: 0;
+    font-size: 1.2rem;
+    color: var(--color-light-bg); 
+    margin-bottom: 15px; 
+}
+
+/* Base style for the proficiency list */
+.key-proficiencies .prof-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+/* Style for each individual proficiency tag/pill */
+.prof-list li {
+    background-color: var(--color-accent-soft);
+    color: var(--color-text);
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: 300;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+/* Optional: Make the bold text inside the pill stand out less */
+.prof-list li strong {
+    font-weight: 500;
+}
+
+
+/* -------------------------------------- */
+/* 6. PROJECTS SECTION                    */
+/* -------------------------------------- */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--color-secondary);
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    color: var(--color-light-bg);
+    margin-bottom: 10px;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px; 
+}
+
+.tech-tag {
+    background-color: var(--color-accent-soft);
+    color: var(--color-text);
+    padding: 3px 7px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-light-bg);
+    font-weight: 600;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* -------------------------------------- */
+/* 7. FOOTER                              */
+/* -------------------------------------- */
+
+.site-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* space between icons and button */
+}
+
+/* Align social icons horizontally */
+#contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Make sure button aligns nicely with the icons */
+.site-footer .cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 8px;
+}
+
+.site-footer {
+    background-color: var(--color-secondary);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 3px solid var(--color-primary);
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-accent-soft);
+}
+
+.closing-statement {
+    margin: 15px 0;
+    color: var(--color-accent-soft);
+    font-style: italic;
+}
+
+.copyright {
+    margin-top: 10px;
+    color: var(--color-accent-soft);
+    opacity: 0.7;
+}
+
+/* -------------------------------------- */
+/* 8. MEDIA QUERIES (Desktop Layout)      */
+/* -------------------------------------- */
+
+@media (max-width: 480px) {
+    #main-nav {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    #main-nav .logo a {
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+
+    #main-nav ul {
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    #main-nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .cta-secondary {
+        align-self: flex-start;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    #main-nav ul {
+        gap: 35px;
+    }
+
+    .hero-content {
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .hero-text {
+        width: 60%;
+        order: 1; 
+        text-align: left;
+        padding-right: 20px; 
+    }
+    
+    .hero-content .hero-text h1,
+    .hero-content .hero-text h2,
+    .hero-content .hero-text p {
+        text-align: left; 
+    }
+
+    .hero-image {
+        width: 35%; 
+        order: 2; 
+        margin-top: 0; 
+        padding-left: 40px;
+    }
+    
+    #home h1 {
+        font-size: 3.5rem;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+    }
+
+    #home .cta-primary {
+        margin-left: 0;
+    }
+
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-text {
+        flex: 2;
+        padding-right: 20px;
+    }
+
+    .key-proficiencies {
+        flex: 1;
+        border-left: 1px solid var(--color-accent-soft); 
+        padding-left: 20px;
+    }
+    
+    .about-text .cta-primary {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #home h1 {
+        font-size: 4.5rem; 
+    }
+    
+    .hero-text {
+        padding-right: 60px; 
+        width: 65%;
+    }
+    
+    .hero-image {
+        padding-left: 60px;
+        width: 35%;
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-content {
+        gap: 100px;
+    }
+
+    #home h1 {
+        font-size: 4.5rem;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+    }
+}

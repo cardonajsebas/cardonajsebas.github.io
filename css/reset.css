@@ -1,0 +1,48 @@
+/* css/reset.css */
+
+/* 1. Universal Reset: Removes default margin/padding and sets border-box model for easy sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Base HTML & Body: Sets default font, height for full viewport, and background color */
+html {
+    /* Enables smooth scrolling for in-page links (e.g., nav links) */
+    scroll-behavior: smooth; 
+}
+
+body {
+    line-height: 1.6;
+    font-family: var(--font-family-primary);
+    background-color: var(--color-primary); /* Use the primary dark color */
+    color: var(--color-text); /* Use the light text color */
+    min-height: 100vh;
+}
+
+/* 3. Typography Reset: Removes default styling from headings and lists */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 0.5em; /* Add a slight margin below all headings */
+}
+
+ul {
+    list-style: none; /* Remove bullet points from lists */
+}
+
+/* 4. Anchor (Link) Reset: Removes underline and inherits text color */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* 5. Image Reset: Ensures images are responsive and don't overflow */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
