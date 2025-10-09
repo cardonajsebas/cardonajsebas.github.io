@@ -482,12 +482,12 @@ h1{
     }
     
     .hero-text {
-        padding-right: 60px; 
-        width: 65%;
+        padding-right: 40px; 
+        width: 60%;
     }
     
     .hero-image {
-        padding-left: 60px;
+        padding-left: 30px;
         width: 35%;
     }
     
