@@ -373,7 +373,7 @@ h1{
 /* 8. MEDIA QUERIES (Desktop Layout)      */
 /* -------------------------------------- */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     #main-nav {
         flex-wrap: wrap;
         align-items: center;
@@ -396,10 +396,39 @@ h1{
         font-size: 0.9rem;
     }
 
-    .cta-secondary {
-        align-self: flex-start;
-        padding: 8px 15px;
-        font-size: 0.9rem;
+    #home h1 {
+        font-size: 3.5rem;
+    }
+
+    #home h2 {
+        font-size: 1.5rem;
+    }
+
+    #about .container {
+        text-align: center;
+    }
+
+    #about .cta-primary,
+    #about .cta-secondary {
+        display: inline-block;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    #about h2 {
+        text-align: center;
+    }
+
+    #about p {
+        text-align: justify;
+        text-justify: inter-word;
+        line-height: 1.6;
+    }
+
+    #projects p {
+        text-align: justify;
+        text-justify: inter-word;
+        line-height: 1.6;
     }
 }
 
