@@ -20,7 +20,7 @@ const projectsData = [
         title: "Educational Data Modeling and Prediction",
         techStack: "SQL, Spreadsheets, Data Visualization",
         summary: "A personal project focused on modeling and predicting educational outcomes. Showcases skill in data cleaning, exploratory data analysis (EDA), and implementing statistical models to derive actionable conclusions in the education sector.",
-        link: "https://github.com/cardonajsebas/personal_project_education",
+        link: "https://github.com/cardonajsebas/data_analysis/tree/main/personal_project_education",
         linkText: "View on GitHub →"
     }
 ];
