@@ -10,18 +10,18 @@ const projectsData = [
         linkText: "View on GitHub →"
     },
     {
-        title: "E-commerce Business Intelligence & Analysis",
-        techStack: "Python, EDA, Business Intelligence",
-        summary: "Detailed Kaggle project utilizing SQL and advanced data analysis techniques to uncover key trends, customer segmentation, and performance metrics within a large e-commerce dataset. Demonstrates ability to drive business decision-making through insights.",
-        link: "https://www.kaggle.com/code/jsebascardona/e-commerce-project",
-        linkText: "View on Kaggle →"
-    },
-    {
         title: "Educational Data Modeling and Prediction",
-        techStack: "SQL, Spreadsheets, Data Visualization",
-        summary: "A personal project focused on modeling and predicting educational outcomes. Showcases skill in data cleaning, exploratory data analysis (EDA), and implementing statistical models to derive actionable conclusions in the education sector.",
+        techStack: "SQL, Python, Tableau",
+        summary: "A personal project focused on modeling and predicting educational outcomes. Showcases skill in data cleaning, exploratory data analysis (EDA), and implementing statistical models to derive actionable conclusions in education global context.",
         link: "https://github.com/cardonajsebas/data_analysis/tree/main/world_education",
         linkText: "View on GitHub →"
+    },
+    {
+        title: "E-commerce Business Intelligence & Analysis",
+        techStack: "Python, EDA, Business Intelligence",
+        summary: "Detailed Kaggle project utilizing Python and advanced data analysis techniques to uncover key trends, customer segmentation, and performance metrics within a large e-commerce dataset. Demonstrates ability to drive business decision-making through insights.",
+        link: "https://www.kaggle.com/code/jsebascardona/e-commerce-project",
+        linkText: "View on Kaggle →"
     }
 ];
 
