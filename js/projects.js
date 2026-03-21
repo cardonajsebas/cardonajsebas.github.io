@@ -1,31 +1,30 @@
 // js/projects.js
 
-// 1. DATA ARRAY: Store your projects as a structured array of objects
 const projectsData = [
     {
-        title: "EHR Integration Pipeline Development",
-        techStack: "Python, SQL, Salesforce",
-        summary: "A comprehensive data engineering project in Python that simulates an electronic health record (EHR) integration flow. Focuses on robust API data extraction, data transformation, and loading into a relational database, mirroring real-world healthcare data challenges.",
+        title: "Olist Data Warehouse",
+        techStack: "PostgreSQL, SQL, Python, DBeaver, Draw.io",
+        summary: "End-to-end data warehouse built on the Olist Brazilian E-Commerce dataset following Medallion Architecture in PostgreSQL. Includes ETL stored procedures for ingestion, data cleaning, type casting and Star Schema modeling. Delivered as SQL views with derived metrics for delivery performance, customer behavior and product analytics. Fully documented with a data catalog, naming conventions, architecture diagrams and data quality issue log. Managed via GitHub Projects with feature branches and pull requests.",
+        link: "https://github.com/cardonajsebas/olist-data-warehouse",
+        linkText: "View on GitHub →"
+    },
+    {
+        title: "EHR Integration Pipeline",
+        techStack: "Python, REST APIs, SQL, Salesforce",
+        summary: "Automated ETL pipeline that extracts, compares and synchronizes records across EHR and Salesforce platforms. Implements modular Python validation scripts for provider, patient and appointment entities, simulating enterprise-grade healthcare data integration workflows with structured reconciliation and audit logging.",
         link: "https://github.com/cardonajsebas/ehr-integration-pipeline",
         linkText: "View on GitHub →"
     },
     {
-        title: "Educational Data Modeling and Prediction",
-        techStack: "SQL, Python, Tableau",
-        summary: "A personal project focused on modeling and predicting educational outcomes. Showcases skill in data cleaning, exploratory data analysis (EDA), and implementing statistical models to derive actionable conclusions in education global context.",
-        link: "https://github.com/cardonajsebas/data_analysis/tree/main/world_education",
+        title: "Data Analysis Portfolio",
+        techStack: "SQL, Python, Tableau, pandas, numpy, Matplotlib, Seaborn",
+        summary: "Collection of data analysis projects including a Global Indicators study, modeling international datasets in SQL and visualizing regional trends in Tableau, and an E-Commerce Exploratory Data Analysis uncovering purchasing patterns using pandas, NumPy and Seaborn. Demonstrates end-to-end analytical workflow from raw data to business insights.",
+        link: "https://github.com/cardonajsebas",
         linkText: "View on GitHub →"
-    },
-    {
-        title: "E-commerce Business Intelligence & Analysis",
-        techStack: "Python, EDA, Business Intelligence",
-        summary: "Detailed Kaggle project utilizing Python and advanced data analysis techniques to uncover key trends, customer segmentation, and performance metrics within a large e-commerce dataset. Demonstrates ability to drive business decision-making through insights.",
-        link: "https://www.kaggle.com/code/jsebascardona/e-commerce-project",
-        linkText: "View on Kaggle →"
     }
 ];
 
-// 2. RENDERING FUNCTION
+// RENDERING FUNCTION
 function renderProjects() {
     const projectGrid = document.getElementById('project-grid');
     if (!projectGrid) return;
