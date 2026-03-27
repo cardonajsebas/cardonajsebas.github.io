@@ -50,11 +50,13 @@ html {
 /* -------------------------------------- */
 
 h1 { font-size: 2.5rem; margin-bottom: 0.25em; }
-h2 { font-size: 2rem; margin-bottom: 0.75em; }
-h3 { font-size: 1.5rem; margin-bottom: 0.5em; }
+h2 { font-size: 2rem; margin-bottom: 0.75em; text-align: center;}
+h3 { font-size: 1.5rem; margin-bottom: 0.5em; text-align: center;}
 
 p {
     margin-bottom: 1em;
+    font-size: 1.4rem;
+    text-align: left;
 }
 
 h1{ 
@@ -187,7 +189,7 @@ h1{
 
 .value-proposition {
     max-width: 800px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-top: 20px;
     margin-bottom: 40px;
     margin-left: auto; 
@@ -213,6 +215,7 @@ h1{
 .about-text .cta-primary {
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 /* Styling for the Key Proficiencies tags */
@@ -220,7 +223,7 @@ h1{
     margin-top: 0; 
     border-bottom: none; 
     padding-bottom: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--color-light-bg); 
     margin-bottom: 15px; 
 }
@@ -269,6 +272,9 @@ h1{
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -301,7 +307,7 @@ h1{
 
 .project-link {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: auto;
     color: var(--color-light-bg);
     font-weight: 600;
 }
@@ -382,7 +388,7 @@ h1{
     }
 
     #main-nav .logo a {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         white-space: nowrap;
     }
 
@@ -393,7 +399,7 @@ h1{
     }
 
     #main-nav ul li a {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     #home h1 {
@@ -456,7 +462,10 @@ h1{
     .hero-content .hero-text h1,
     .hero-content .hero-text h2,
     .hero-content .hero-text p {
-        text-align: left; 
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+        color: var(--color-text-dim);
+        text-align: left; /* Changed from center */
     }
 
     .hero-image {
@@ -490,7 +499,6 @@ h1{
 
     .key-proficiencies {
         flex: 1;
-        border-left: 1px solid var(--color-accent-soft); 
         padding-left: 20px;
     }
     
@@ -521,7 +529,9 @@ h1{
     }
     
     .project-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* FIX: Forces 2 columns for a cleaner look */
+        max-width: 1000px;
+        margin: 40px auto 0 auto;
     }
 }
 
@@ -536,5 +546,11 @@ h1{
 
     #home h2 {
         font-size: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* FIX: Forces 2 columns for a cleaner look */
+        max-width: 1000px;
+        margin: 40px auto 0 auto;
     }
 }

@@ -2,51 +2,53 @@
 
 const projectsData = [
     {
-        title: "Olist Data Warehouse",
+        title: "Olist - Data Warehouse (Phase 1)",
         techStack: "PostgreSQL, SQL, Python, DBeaver, Draw.io",
-        summary: "End-to-end data warehouse built on the Olist Brazilian E-Commerce dataset following Medallion Architecture in PostgreSQL. Includes ETL stored procedures for ingestion, data cleaning, type casting and Star Schema modeling. Delivered as SQL views with derived metrics for delivery performance, customer behavior and product analytics. Fully documented with a data catalog, naming conventions, architecture diagrams and data quality issue log. Managed via GitHub Projects with feature branches and pull requests.",
+        summary: "Built an end-to-end data warehouse from scratch on the Olist Brazilian E-Commerce dataset using Medallion Architecture in PostgreSQL. Includes ETL stored procedures, Star Schema modeling, and full data quality validation.",
         link: "https://github.com/cardonajsebas/olist-data-warehouse",
-        linkText: "View on GitHub →"
+        linkText: "View Phase 1 on GitHub →"
+    },
+    {
+        title: "Olist - Cloud Migration (Phase 2)",
+        techStack: "GCP, BigQuery, dbt, GitHub Actions, Python, CLI",
+        summary: "Migrated the local warehouse to GCP. Implemented dbt for transformations and testing, with a CI/CD pipeline via GitHub Actions to automate builds on every pull request.",
+        link: "https://github.com/cardonajsebas/olist-analytics-engineering",
+        linkText: "View Phase 2 on GitHub →"
     },
     {
         title: "EHR Integration Pipeline",
         techStack: "Python, REST APIs, SQL, Salesforce",
-        summary: "Automated ETL pipeline that extracts, compares and synchronizes records across EHR and Salesforce platforms. Implements modular Python validation scripts for provider, patient and appointment entities, simulating enterprise-grade healthcare data integration workflows with structured reconciliation and audit logging.",
+        summary: "Automated ETL pipeline synchronizing records across EHR and Salesforce platforms. Features modular Python validation scripts for enterprise-grade healthcare data reconciliation.",
         link: "https://github.com/cardonajsebas/ehr-integration-pipeline",
         linkText: "View on GitHub →"
     },
     {
         title: "Data Analysis Portfolio",
-        techStack: "SQL, Python, Tableau, pandas, numpy, Matplotlib, Seaborn",
-        summary: "Collection of data analysis projects including a Global Indicators study, modeling international datasets in SQL and visualizing regional trends in Tableau, and an E-Commerce Exploratory Data Analysis uncovering purchasing patterns using pandas, NumPy and Seaborn. Demonstrates end-to-end analytical workflow from raw data to business insights.",
+        techStack: "SQL, Python, Tableau, pandas, NumPy, Seaborn",
+        summary: "Analytical portfolio covering global development indicators and E-commerce EDA, demonstrating workflows from raw data ingestion to stakeholder-ready insights.",
         link: "https://github.com/cardonajsebas",
         linkText: "View on GitHub →"
     }
 ];
 
-// RENDERING FUNCTION
+function buildTechTags(techStack) {
+    return techStack.split(',').map(tech => `<span class="tech-tag">${tech.trim()}</span>`).join('');
+}
+
+function renderStandardCard(project) {
+    return `
+        <article class="project-card">
+            <h3>${project.title}</h3>
+            <div class="tech-stack-container">${buildTechTags(project.techStack)}</div>
+            <p class="summary">${project.summary}</p>
+            <a href="${project.link}" target="_blank" class="project-link">${project.linkText}</a>
+        </article>
+    `;
+}
+
 function renderProjects() {
     const projectGrid = document.getElementById('project-grid');
-    if (!projectGrid) return;
-
-    const cardsHtml = projectsData.map(project => {
-        const techTags = project.techStack
-            .split(',')
-            .map(tech => tech.trim())
-            .map(tech => `<span class="tech-tag">${tech}</span>`)
-            .join('');
-
-        return `
-            <article class="project-card">
-                <h3>${project.title}</h3>
-                <div class="tech-stack-container"> 
-                    ${techTags}
-                </div>
-                <p class="summary">${project.summary}</p>
-                <a href="${project.link}" target="_blank" class="project-link">${project.linkText}</a>
-            </article>
-        `;
-    }).join('');
-
-    projectGrid.innerHTML = cardsHtml;
+    if (projectGrid) {
+        projectGrid.innerHTML = projectsData.map(renderStandardCard).join('');
+    }
 }
